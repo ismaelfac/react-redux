@@ -7,7 +7,8 @@ function Page(props){
     const {
         results
     } = props;
-    const isEmpty = false;
+    const isEmpty = true;
+    console.log(results)
     return (
         <Fragment>
             <CssBaseline />
@@ -15,11 +16,11 @@ function Page(props){
 
             <div className="results-page">
                 {isEmpty ?
-                        <Typography variant="h5" component="h3" className="page-message">
-                            There are no results
-                        </Typography>
-                        :
-                        results
+                    <Typography variant="h5" component="h3" className="page-message">
+                        There are no results
+                    </Typography>
+                    :
+                    results
                 }
             </div>
         </Fragment>
