@@ -12,7 +12,12 @@ const defaultState = [
 function reducer(state = defaultState, {type, payload}){
     switch (type) {
         case 'findSuggestions': {
-            return false
+            return [
+                {
+                    item: 1,
+                    title: 'React Native'
+                }
+            ]
         }
         default:
             return state

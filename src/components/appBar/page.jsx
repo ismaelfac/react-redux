@@ -11,7 +11,7 @@ function Page(props) {
         text,
         suggestions,
         onChangeText,
-        onChangeSelection
+        onChangeSelection,
     } = props;
     return (
         <AppBar position="static">
