@@ -36,7 +36,6 @@ class Autocomplete extends Component {
                     style={{ width: '100%' }}
                     onChange={(event) => {
                         const newText = event.target.value;
-
                         onChangeText(newText);
 
                         if (!isOpen && newText) {

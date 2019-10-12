@@ -1,14 +1,19 @@
 import React, { Fragment } from 'react';
-import { CssBaseline } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '../appBar'
 
 function Page(props){
     const {
-        results
+        results,
+        goTo
     } = props;
-    const isEmpty = true;
-    console.log(results)
+    const isEmpty = results.length === 0;
+    console.log('results: '+results)
     return (
         <Fragment>
             <CssBaseline />
@@ -20,7 +25,17 @@ function Page(props){
                         There are no results
                     </Typography>
                     :
-                    results
+                    results.map(item => 
+                        <div
+                            key={item.id} 
+                            className="card-container"
+                        >
+                            <Card className="card" onClick={() => goTo(`/details/${item.id}`)}>
+
+                            </Card>
+                            
+                        </div>    
+                    )
                 }
             </div>
         </Fragment>

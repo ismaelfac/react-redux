@@ -12,6 +12,7 @@ class IAppBar extends Component {
         this.onChangeSelection = this.onChangeSelection.bind(this);
     }
     onChangeText(text) {
+        console.log('evento onChangeText desde appBar: '+text)
         this.setState({text});
 
     }
