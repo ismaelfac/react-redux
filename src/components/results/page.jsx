@@ -1,19 +1,26 @@
 import React, { Fragment } from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '../appBar'
-import { CardHeader } from '@material-ui/core';
+import { Grid, makeStyles, CssBaseline, Typography, CardMedia, CardContent, CardActionArea, Card } from '@material-ui/core';
 import './style.css';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+
+    },
+    card: {
+        display: 'flex',
+        padding: '1rem',
+        margin: '1rem',
+        maxWidth:'380px'
+    }
+}));
 
 function Page(props){
     const {
         results
     } = props;
     const isEmpty = results.length === 0;
+    const classes = useStyles();
     return (
         <Fragment>
             <CssBaseline />
@@ -26,14 +33,11 @@ function Page(props){
                     </Typography>
                     :
                     results.map(item =>
-                        <div
+                        <Grid
+                            container justify="center" alignItems="center"
                             key={item.id}
-                            className="card-container"
                         >
-                            <Card
-                                className="card"
-                                
-                            >
+                            <Card className={classes.card}>
                                 <CardActionArea>
                                     <CardMedia
                                         className="card-media"
@@ -49,8 +53,8 @@ function Page(props){
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
-                            </Card>
-                    </div>)                    
+                            </Card>          
+                    </Grid>)                    
                 }
             </div>
         </Fragment>

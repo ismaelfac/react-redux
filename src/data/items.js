@@ -9,8 +9,20 @@ export default [
     },
     {
         id: id++,
+        title: `React-Material-UI`,
+        image: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrJTf3fi6OzMBYZbJvMBQ1T20SYl26X5WdLeHKTgGr5HuIqwb`,
+        content: `In computing, React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.`,
+    },
+    {
+        id: id++,
         title: `React Native`,
         image: `https://miro.medium.com/max/900/1*SluXAlSPIxxWjwUsiqD2Kw.png`,
+        content: `In computing, React (also known as React.js or ReactJS) is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.`,
+    },
+    {
+        id: id++,
+        title: `React Redux`,
+        image: `https://miro.medium.com/max/1400/0*U2DmhXYumRyXH6X1.png`,
         content: `In computing, React (also known as React.js or ReactJS) is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.`,
     },
     {
@@ -89,6 +101,12 @@ export default [
         id: id++,
         title: `Vue`,
         image: `https://cdn-images-1.medium.com/max/1200/1*-PlqbnwqjqJi_EVmrhmuDQ.jpeg`,
+        content: `Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications.`,
+    },
+    {
+        id: id++,
+        title: `Vuex`,
+        image: `https://cms-assets.tutsplus.com/uploads/users/2028/posts/30952/preview_image/preview-template.png`,
         content: `Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications.`,
     },
     {

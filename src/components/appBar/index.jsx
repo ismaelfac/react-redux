@@ -19,7 +19,6 @@ class IAppBar extends Component {
 
     }
     onChangeSelection(text) {
-        console.log('onChangeSelection')
         this.setState({text});
         this.props.findResults(text);
     }

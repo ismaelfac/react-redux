@@ -21,6 +21,7 @@
 
 .container-results {
     position: absolute;
+    font-family: 'Courier New', Courier, monospace;
     z-index: 100000;
     margin-top: 2.5rem;
     left: 0;

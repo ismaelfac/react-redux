@@ -9,18 +9,16 @@ class Results extends Component {
 
         this.state = {
         };
-
     }
-
     render() {
         const {
             results,
         } = this.props;
-        results.map(l => console.log('results: '+l.id))
+        results.map(l => console.log('results: '+l.id));
         return (
             <Page
                 results={results}
-            />            
+            />                        
         );
     }
 }

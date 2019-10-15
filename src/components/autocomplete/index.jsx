@@ -8,7 +8,6 @@ import './style.css';
 class Autocomplete extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             isOpen: false,
         };
