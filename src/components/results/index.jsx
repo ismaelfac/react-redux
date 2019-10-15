@@ -10,29 +10,23 @@ class Results extends Component {
         this.state = {
         };
 
-        this.goTo = this.goTo.bind(this);
-    }
-
-    goTo(path) {
-        this.props.history.push(path);
     }
 
     render() {
         const {
             results,
         } = this.props;
-
+        results.map(l => console.log('results: '+l.id))
         return (
             <Page
                 results={results}
-                goTo={this.goTo}
-            />
+            />            
         );
     }
 }
 
 const mapStateToProps = state => ({
-    results: state.results,
+    results: state.results
 });
 
 export default withRouter(

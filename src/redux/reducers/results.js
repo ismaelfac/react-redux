@@ -1,23 +1,13 @@
-const defaultState = [
-    {
-        item: 1,
-        title: 'Reactjs'
-    },
-    {
-        item: 2,
-        title: 'React Native'
-    }
-]
+import {type as findResultsType } from '../actions/findResults';
+import items from '../../data/items';
+
+const defaultState = [];
 
 function reducer(state = defaultState, {type, payload}){
     switch (type) {
-        case 'findSuggestions': {
-            return [
-                {
-                    item: 1,
-                    title: 'React Native'
-                }
-            ]
+        case findResultsType: {
+            const regex = new RegExp(`^${payload}`,'i');
+            return items.filter(n => regex.test(n.title));
         }
         default:
             return state

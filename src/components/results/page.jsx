@@ -6,14 +6,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '../appBar'
+import { CardHeader } from '@material-ui/core';
+import './style.css';
 
 function Page(props){
     const {
-        results,
-        goTo
+        results
     } = props;
     const isEmpty = results.length === 0;
-    console.log('results: '+results)
     return (
         <Fragment>
             <CssBaseline />
@@ -25,17 +25,32 @@ function Page(props){
                         There are no results
                     </Typography>
                     :
-                    results.map(item => 
+                    results.map(item =>
                         <div
-                            key={item.id} 
+                            key={item.id}
                             className="card-container"
                         >
-                            <Card className="card" onClick={() => goTo(`/details/${item.id}`)}>
-
+                            <Card
+                                className="card"
+                                
+                            >
+                                <CardActionArea>
+                                    <CardMedia
+                                        className="card-media"
+                                        image={item.image}
+                                        title={item.title}
+                                    />
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            {item.title}
+                                        </Typography>
+                                        <Typography component="p">
+                                            {item.content}
+                                        </Typography>
+                                    </CardContent>
+                                </CardActionArea>
                             </Card>
-                            
-                        </div>    
-                    )
+                    </div>)                    
                 }
             </div>
         </Fragment>

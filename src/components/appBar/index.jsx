@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Page from './page';
+import findSuggestions from '../../redux/actions/findSuggestions';
+import findResults from '../../redux/actions/findResults';
 
 class IAppBar extends Component {
     constructor(props){
@@ -12,12 +14,14 @@ class IAppBar extends Component {
         this.onChangeSelection = this.onChangeSelection.bind(this);
     }
     onChangeText(text) {
-        console.log('evento onChangeText desde appBar: '+text)
         this.setState({text});
+        this.props.findSuggestions(text);
 
     }
     onChangeSelection(text) {
-
+        console.log('onChangeSelection')
+        this.setState({text});
+        this.props.findResults(text);
     }
     render() {
         const { text } = this.state;
@@ -39,4 +43,11 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(IAppBar);
+const mapDispathToProps = (dispath) => {
+    return {
+        findSuggestions: text => dispath(findSuggestions(text)),
+        findResults: text => dispath(findResults(text))
+    };
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(IAppBar);
