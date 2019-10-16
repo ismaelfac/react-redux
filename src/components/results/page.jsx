@@ -6,20 +6,24 @@ import AppBar from '../appBar'
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: '3rem 1rem',
+        paddingTop: '2rem',
         display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center'
+        flexFlow: 'row wrap',
+        justifyContent: 'space-around',
+        alignContent: 'center'
     },
     card: {
-        display: 'flex',
+        display: 'inline-block',
         padding: '1rem',
         margin: '1rem',
-        maxWidth:'30%',
-        minWidth:'350px'
+        maxWidth:'350px',
+        minWidth:'300px'
     },
     cardMedia: {
         height: '140px'
+    },
+    pageMessage: {
+        margin: 'auto'
     }
 }));
 
@@ -36,7 +40,7 @@ function Page(props){
 
             <div className={classes.root}>
                 {isEmpty ?
-                    <Typography variant="h5" component="h3" className="page-message">
+                    <Typography variant="h5" component="h3" className={classes.pageMessage}>
                         There are no results
                     </Typography>
                     :
