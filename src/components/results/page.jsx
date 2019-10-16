@@ -1,17 +1,25 @@
 import React, { Fragment } from 'react';
+import { makeStyles, CssBaseline, Typography, CardMedia, CardContent, CardActionArea, Card } from '@material-ui/core';
+//components auxiliares
 import AppBar from '../appBar'
-import { Grid, makeStyles, CssBaseline, Typography, CardMedia, CardContent, CardActionArea, Card } from '@material-ui/core';
-import './style.css';
+
 
 const useStyles = makeStyles(theme => ({
     root: {
-
+        padding: '3rem 1rem',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     card: {
         display: 'flex',
         padding: '1rem',
         margin: '1rem',
-        maxWidth:'380px'
+        maxWidth:'30%',
+        minWidth:'350px'
+    },
+    cardMedia: {
+        height: '140px'
     }
 }));
 
@@ -26,21 +34,20 @@ function Page(props){
             <CssBaseline />
             <AppBar/>
 
-            <div className="results-page">
+            <div className={classes.root}>
                 {isEmpty ?
                     <Typography variant="h5" component="h3" className="page-message">
                         There are no results
                     </Typography>
                     :
                     results.map(item =>
-                        <Grid
-                            container justify="center" alignItems="center"
+                        <div
                             key={item.id}
                         >
                             <Card className={classes.card}>
                                 <CardActionArea>
                                     <CardMedia
-                                        className="card-media"
+                                        className={classes.cardMedia}
                                         image={item.image}
                                         title={item.title}
                                     />
@@ -54,7 +61,7 @@ function Page(props){
                                     </CardContent>
                                 </CardActionArea>
                             </Card>          
-                    </Grid>)                    
+                    </div>)                    
                 }
             </div>
         </Fragment>
