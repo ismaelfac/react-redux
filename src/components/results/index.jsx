@@ -18,6 +18,9 @@ class Results extends Component {
         return (
             <Page
                 results={results}
+                goTo={(path) => {
+                    this.props.history.push(path)
+                }}
             />                        
         );
     }

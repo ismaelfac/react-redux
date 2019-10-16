@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
 
 function Page(props){
     const {
-        results
+        results,
+        goTo
     } = props;
     const isEmpty = results.length === 0;
     const classes = useStyles();
@@ -48,7 +49,7 @@ function Page(props){
                         <div
                             key={item.id}
                         >
-                            <Card className={classes.card}>
+                            <Card className={classes.card} onClick={() => goTo(`/details/${item.id}`)}>
                                 <CardActionArea>
                                     <CardMedia
                                         className={classes.cardMedia}
