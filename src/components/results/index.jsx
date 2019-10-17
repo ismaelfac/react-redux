@@ -14,7 +14,6 @@ class Results extends Component {
         const {
             results,
         } = this.props;
-        results.map(l => console.log('results: '+l.id));
         return (
             <Page
                 results={results}

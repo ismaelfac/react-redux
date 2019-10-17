@@ -27,6 +27,10 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+const shortParagraph = (text) => {
+    return text.substring(0,100)+' ...';
+}
+
 function Page(props){
     const {
         results,
@@ -61,7 +65,7 @@ function Page(props){
                                             {item.title}
                                         </Typography>
                                         <Typography component="p">
-                                            {item.content}
+                                            {shortParagraph(item.content)}
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>

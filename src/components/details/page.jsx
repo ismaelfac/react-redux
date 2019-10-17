@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
         padding: '1rem'
     }
 }));
+
 function Page(props){
     const classes = useStyles();
     const {
