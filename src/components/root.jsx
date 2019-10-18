@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { saveState } from '../redux/store'
 //************ Components   ********************/
-import Results from '../components/results';
-import Details from '../components/details';
+import Results from './results';
+import Details from './details';
 
 class Root extends Component{
     state = {
