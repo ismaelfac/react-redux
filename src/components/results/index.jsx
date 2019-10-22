@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Page from './page';
-import Formik from "../formik/index";
 class Results extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +15,6 @@ class Results extends Component {
         } = this.props;
         return (
             <div>
-                <Formik/>
                 <Page
                     results={results}
                     goTo={(path) => {
