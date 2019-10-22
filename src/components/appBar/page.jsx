@@ -15,7 +15,7 @@ function Page(props) {
         <AppBar position="static">
             <Toolbar className="appBar">
                 <Typography variant="h6" color="inherit">
-                    Programax
+                    React - Redux - Formik - HOC
                 </Typography>
                 <AutoComplete 
                     text={text}

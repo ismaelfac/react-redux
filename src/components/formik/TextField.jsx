@@ -20,8 +20,7 @@ function MyForm(props) {
       handleSubmit,
       handleChange,
       handleBlur,
-      values,
-      errors
+      values
   } = props;
 
   return (
