@@ -44,7 +44,7 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispathToProps = (dispath) => {
+const mapDispathToProps = dispath => {
     return {
         findSuggestions: text => dispath(findSuggestions(text)),
         findResults: text => dispath(findResults(text))

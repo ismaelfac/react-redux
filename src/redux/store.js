@@ -2,11 +2,15 @@ import {createStore, combineReducers } from 'redux';
 import results from './reducers/results';
 import suggestions from './reducers/suggestions';
 import currentItem from './reducers/currentItem';
+import posts from "./reducers/posts";
+import comments from "./reducers/comments";
 
 const reducer = combineReducers({
     results,
     suggestions,
     currentItem,
+    posts,
+    comments
 });
 
 const globalState = localStorage.getItem('GLOBAL_STATE');
